@@ -1,0 +1,15 @@
+{
+  "id": "raw_network",
+  "name": "Raw Network",
+  "licence": "GPL",
+  "require": "3.0",
+  "version": "0.1",
+  "category": "communication",
+  "hasDependency": false,
+  "hasOwnDaemon": false,
+  "maxDependancyInstallTime": 0,
+  "documentation": "https://nextdom.github.io/plugin-raw_network/#language#/",
+  "changelog": "https://nextdom.github.io/plugin-raw_network/#language#/changelog",
+  "description": "Send raw network packets to equipments",
+  "author": "Sylvain DANGIN"
+}

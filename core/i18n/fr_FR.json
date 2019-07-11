@@ -1,0 +1,48 @@
+{
+  "plugins/raw_network/desktop/modal/add_cmd.php": {
+    "Ajouter": "Ajouter",
+    "Données": "Données",
+    "Envoyé": "Envoyé",
+    "Nom": "Nom",
+    "Protocole": "Protocole",
+    "TCP": "TCP",
+    "Tester": "Tester",
+    "UDP": "UDP"
+  },
+  "plugins/raw_network/desktop/php/raw_network.php": {
+    "Activer": "Activer",
+    "Actions": "Actions",
+    "Ajouter": "Ajouter",
+    "Ajouter un équipement": "Ajouter un équipement",
+    "Ajouter une commande": "Ajouter une commande",
+    "Configuration avancée": "Configuration avancée",
+    "Choisir": "Choisir",
+    "Commandes": "Commandes",
+    "Configuration": "Configuration",
+    "Supprimer": "Supprimer",
+    "Equipement": "Equipement",
+    "Rechercher": "Rechercher",
+    "Icône": "Icône",
+    "Adresse IP": "Adresse IP",
+    "Gestion": "Gestion",
+    "Mes équipements": "Mes équipements",
+    "Nom": "Nom",
+    "Aucun": "Aucun",
+    "Type de protocole": "Type de protocole",
+    "Données du paquet": "Données du paquet",
+    "Objet parent": "Objet parent",
+    "Port": "Port",
+    "Sauvegarder": "Sauvegarder",
+    "Afficher": "Afficher",
+    "Visible": "Visible"
+  },
+  "plugins/raw_network/desktop/js/raw_network.js": {
+    "Nom": "Nom",
+    "Afficher": "Afficher",
+    "Tester": "Tester"
+  },
+  "plugins/raw_network/core/php/raw_network_utils.inc.php": {
+    "Adresse IP incorrect": "Adresse IP incorrect",
+    "Numéro de port incorect": "Numéro de port incorect"
+  }
+}
