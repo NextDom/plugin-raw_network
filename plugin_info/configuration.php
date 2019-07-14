@@ -1,5 +1,4 @@
 <?php
-
 /* -------------------------------------------------------------------- */
 /* Copyright (C) 2018 - 2019 - NextDom - www.nextdom.org                */
 /* This file is part of nextdom.                                        */
@@ -18,47 +17,27 @@
 /* along with nextdom.  If not, see <http://www.gnu.org/licenses/>.     */
 /* -------------------------------------------------------------------- */
 
+require_once dirname(__FILE__) . '/../../../core/php/core.inc.php';
+include_file('core', 'authentification', 'php');
 
-require_once __DIR__ . '/../../../../core/php/core.inc.php';
-require_once 'raw_networkCmd.class.php';
-require_once __DIR__ . '/../php/raw_network_utils.inc.php';
-
-class raw_network extends eqLogic
-{
-    /**
-     * Check if IP and port is valid
-     *
-     * @param array $eqLogicConfiguration Data from eqLogic
-     *
-     * @return bool True if parameters are valid
-     *
-     * @throws Exception
-     */
-    public function checkEqLogicConfiguration($eqLogicConfiguration): bool
-    {
-        // Check configuration data exists
-        if (!array_key_exists('ip', $eqLogicConfiguration) || !array_key_exists('port', $eqLogicConfiguration)) {
-            return false;
-        }
-        raw_network_utils::checkValidIp($eqLogicConfiguration['ip']);
-        raw_network_utils::checkValidPort($eqLogicConfiguration['port']);
-        return true;
-    }
-
-    /**
-     * Initialize eqLogic data
-     */
-    public function preInsert()
-    {
-        $this->setConfiguration('icon', '<i class="icon fa fa-star"></i>');
-    }
-
-    /**
-     * Validate data
-     */
-    public function preUpdate()
-    {
-        raw_network_utils::checkValidIp($this->getConfiguration('ip'));
-        raw_network_utils::checkValidPort($this->getConfiguration('port'));
-    }
+if (!isConnect('admin')) {
+    throw new Exception('{{401 - Accès non autorisé}}');
 }
+
+$timeout = config::byKey('timeout', 'raw_network', null);
+if ($timeout === null || !is_numeric($timeout)) {
+    config::save('timeout', 300, 'raw_network');
+}
+
+?>
+
+<form class="form-horizontal">
+    <fieldset>
+        <div class="form-group">
+            <label class="col-lg-3 control-label">{{Temps entre deux commandes (en millisecondes}}</label>
+            <div class="col-lg-9">
+                <input type="text" class="configKey form-control" data-l1key="timeout" />
+            </div>
+        </div>
+    </fieldset>
+</form>
